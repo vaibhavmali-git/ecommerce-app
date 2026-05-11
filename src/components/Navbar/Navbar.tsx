@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import { useCart } from '../../context/CartContext';
 
 export default function Navbar() {
+  const { totalItems } = useCart();
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -11,7 +13,7 @@ export default function Navbar() {
 
         <nav>
           <Link to="/cart" className={styles.cartLink}>
-            Cart (0)
+            Cart {totalItems}
           </Link>
         </nav>
       </div>
