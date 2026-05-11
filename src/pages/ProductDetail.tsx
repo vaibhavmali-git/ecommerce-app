@@ -4,6 +4,7 @@ import { fetchProductById } from '../api/products';
 import type { Product } from '../types';
 import { useCart } from '../context/CartContext';
 
+
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const { addToCart } = useCart();
