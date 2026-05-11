@@ -17,7 +17,6 @@ function App() {
       <div style={{ flex: 1, maxWidth: '1200px', margin: '0 auto', width: '100%', overflowX: 'hidden' }}>
 
         <AnimatePresence mode="wait">
-
           <Routes location={location} key={location.pathname}>
 
             <Route path="/" element={
