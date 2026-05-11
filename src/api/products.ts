@@ -28,3 +28,11 @@ export const fetchProducts = async (categoryIds: string[]): Promise<Product[]> =
 
   return results.flat(); 
 };
+
+export const fetchProductById = async (id: string): Promise<Product> => {
+  const response = await fetch(`${BASE_URL}/products/${id}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch product details');
+  }
+  return response.json();
+};
