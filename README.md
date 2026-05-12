@@ -1,10 +1,38 @@
-# E-Commerce Storefront
+# E-Commerce
 
 A responsive e-commerce web application where one can browse products, filter by category, sort by price, view product details, and manage a shopping cart.
 
 * **GitHub Repository:** https://github.com/vaibhavmali-git/ecommerce-app
 * **Live Demo:** https://vaibhav-ecommerce.vercel.app
 
+## Screenshots
+
+### 1. Home
+![Home Page](./docs/home-products.png)
+
+### 2. Filtering & Sorting
+<p align="center">
+  <img src="./docs/filter.png" width="45%" />
+  <img src="./docs/sort.png" width="45%" />
+</p>
+
+### 3. Pagination
+![Pagination](./docs/pagination.png)
+
+### 4. Product Details
+![Product Details](./docs/product-details.png)
+
+### 5. Shopping Cart States
+<p align="center">
+  <img src="./docs/cart-empty.png" width="45%" />
+  <img src="./docs/cart.png" width="45%" />
+</p>
+
+### 6. Order Confirmation
+A mock checkout flow that clears the persistent state and provides visual feedback upon completion.
+![Order Confirmation](./docs/cart-confirm.png)
+
+---
 ## How to Set Up and Run the Application
 
 Make sure you have Node.js installed on your computer before starting.
