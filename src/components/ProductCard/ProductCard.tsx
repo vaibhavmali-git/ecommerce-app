@@ -17,7 +17,11 @@ export default function ProductCard({ product }: ProductCardProps) {
           src={cleanImage || 'https://via.placeholder.com/300'}
           alt={product.title}
           className={styles.image}
-          loading="lazy"
+          fetchPriority="high" 
+          decoding="async"
+          onError={(e) => {
+            e.currentTarget.src = 'https://images.unsplash.com/photo-1560393464-5c69a73c5770?w=400&q=80';
+          }}
         />
       </div>
 
