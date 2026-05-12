@@ -1,6 +1,9 @@
 # E-Commerce Storefront
 
-This repository contains the frontend code for a responsive e-commerce web application. It allows users to browse products, filter by category, sort by price, view detailed product information, and manage a shopping cart. 
+A responsive e-commerce web application where one can browse products, filter by category, sort by price, view product details, and manage a shopping cart.
+
+**GitHub Repository:** https://github.com/vaibhavmali-git/ecommerce-app
+**Live:** https://vaibhav-ecommerce.vercel.app
 
 ## How to Set Up and Run the Application
 
@@ -10,38 +13,37 @@ Make sure you have Node.js installed on your computer before starting.
 2. Open your terminal and navigate into the project folder.
 3. Run `npm install` to download all the required project dependencies.
 4. Run `npm run dev` to start the local development server.
-5. Open your web browser and go to `http://localhost:5173` to view and interact with the application.
+5. Open your browser and go to `http://localhost:5173` to view the application.
 
 ## How to Run and Check Tests
 
-This project uses Playwright for end-to-end testing to ensure the core user flows work as expected.
+This project uses Playwright for end-to-end testing to verify that the core flows work as expected.
 
-1. Start your local development server by running `npm run dev` in one terminal window. Keep this running.
+1. Start the local development server by running `npm run dev` in one terminal window and keep it running.
 2. Open a second terminal window in the same project folder.
-3. If this is your first time using Playwright on your machine, run `npx playwright install` to download the necessary test browsers.
-4. To run the tests silently in the background, run the command `npx playwright test`. The terminal will tell you if the tests passed or failed.
-5. For a better visual experience, run `npx playwright test --ui`. This command opens a developer dashboard where you can watch the tests click through the application step by step. 
+3. If this is your first time using Playwright, run `npx playwright install` to download the required test browsers.
+4. Run `npx playwright test` to run all tests in the background. The terminal will report which tests passed or failed.
+5. Run `npx playwright test --ui` to open the visual dashboard and watch the tests step through the application.
 
 ## Assumptions
 
-* The Platzi Fake Store API is reliably available for fetching the product and category data.
-* The application will be accessed on modern web browsers that fully support React hooks and CSS modules.
-* Local storage enabled in their web browsers. This is required to save the shopping cart state between page reloads.
+- The Platzi Fake Store API is available and reliably serving product and category data.
+- The application is accessed on modern browsers that support React hooks and CSS modules.
+- Local storage is enabled in the browser, which is needed to persist the shopping cart across page reloads.
 
 ## Limitations
 
-* Due to the limitations of the external API regarding complex server-side sorting, the application handles sorting and pagination on the client side. The app fetches the items and sorts them in the browser memory. This works perfectly for catalogues with a few hundred items but would require a dedicated backend update if the store grew to thousands of items.
-* The checkout process is only visually represented. Clicking the checkout button will trigger an alert message, as there is no real payment gateway or order processing backend attached to this project.
+- Sorting and pagination happen on the client side because the external API does not support complex server-side sorting. The app fetches all items and sorts them in the browser, which works fine for a few hundred products but would need a backend change if the catalogue grew significantly larger.
+- The checkout flow is only a visual representation. Clicking the checkout button shows an alert since there is no real payment gateway or order processing backend connected.
 
 ### Known Asset Performance
-The application consumes the Platzi Fake Store API for product data. Please note that the image assets provided by this public API are hosted on shared third-party servers. 
 
-As a result, you may notice a slight delay in image rendering during the initial load or when switching categories. This is a limitation of the external media hosting and not a reflection of the application's internal state management or routing logic.
+Product images are served from shared third-party servers through the Platzi Fake Store API. You might notice a slight delay when images load for the first time or when switching between categories. This is a limitation of the external hosting and has nothing to do with the application itself.
 
-## Additional Features Implemented
+## Additional Features
 
-* **Custom User Interface:** The application interface was built from scratch using CSS Modules. It avoids heavy third-party component libraries to maintain a lightweight, clean, and customized design.
-* **URL State Management:** Category filters and sorting preferences are automatically synced with the browser URL. This allows users to bookmark or share a specific filtered view, and the exact same layout will load when the link is opened.
-* **Persistent Shopping Cart:** The shopping cart uses React Context paired with browser local storage. If a user accidentally refreshes the page or closes the tab, their selected items remain safely in the cart.
-* **Micro-Interactions:** The application uses Framer Motion to provide fluid transitions when navigating between pages and smooth visual feedback when items are added to or removed from the cart.
-
+- **Custom User Interface:** The UI was built from scratch using CSS Modules, keeping the design lightweight and consistent without relying on heavy component libraries.
+- **URL State Management:** Active filters and sort preferences are saved directly in the URL, so we can bookmark or share a specific view and it will load exactly as they left it.
+- **Persistent Shopping Cart:** Cart state is managed through React Context and synced with local storage, so items are not lost on a page refresh or accidental tab close.
+- **Micro-Interactions:** Framer Motion handles page transitions and cart interaction animations to keep the experience smooth and responsive.
+- **URL Synced Pagination:** Navigation is handled through page numbers tied to the URL. This ensures we can share links to specific pages of the catalogue and maintains a clean interface by preventing infinite scroll fatigue.
