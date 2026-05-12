@@ -25,15 +25,11 @@ A responsive e-commerce web application where one can browse products, filter by
 ### 5. Shopping Cart
 ![Order Confirmation](./docs/cart.png)
 
-### 5. Cart States
+### 6. Cart States
 <p align="center">
   <img src="./docs/cart-empty.png" width="45%" />
   <img src="./docs/cart-confirm.png" width="45%" />
 </p>
-
-### 6. Order Confirmation
-A mock checkout flow that clears the persistent state and provides visual feedback upon completion.
-![Order Confirmation](./docs/cart-confirm.png)
 
 ---
 ## How to Set Up and Run the Application
