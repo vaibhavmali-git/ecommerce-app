@@ -5,7 +5,7 @@
   gap: 1rem;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid #b4b4b4; 
+  border-top: 1px solid #e8dfd1;
 }
 
 @media (max-width: 640px) {
@@ -23,26 +23,29 @@
 
 .pageNavBtn {
   padding: 0.5rem 1rem;
-  background-color: #fff;
-  color: #374151;
-  border: rgb(199, 199, 199) solid 1px;
+  background-color: #fffbf5;
+  color: #5c5042;
+  border: 1px solid #e8dfd1;
   border-radius: 0.85rem;
   font-weight: 500;
   font-size: 0.875rem;
   font-family: inherit;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .pageNavBtn:hover:not(:disabled) {
-  background-color: #f3f4f6;
-  border-color: #9ca3af;
+  background-color: #e6e9d5;
+  border-color: #c4ccab;
+  color: #354221;
 }
 
 .pageNavBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  background-color: #f9fafb;
+  background-color: #faf4eb;
+  color: #877a6a;
+  border-color: #e8dfd1;
 }
 
 .pageNumberBtn {
@@ -53,28 +56,29 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  color: #4b5563;
-  border: none;
+  color: #5c5042;
+  border: 1px solid transparent;
   border-radius: 0.6rem;
   font-weight: 500;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .pageNumberBtn:hover:not(.active) {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: #e6e9d5;
+  color: #354221;
 }
 
 .active {
-  background-color: #111827;
-  color: #ffffff;
+  color: #59450f;
   font-weight: 600;
+  background-color: #fcebba;
+  border: 1px solid #e8d08b;
 }
 
 .pageDots {
-  color: #9ca3af;
+  color: #877a6a;
   padding: 0 0.25rem;
   user-select: none;
 }

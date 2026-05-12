@@ -2,6 +2,8 @@
   padding: 2rem 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #faf4eb;
+  min-height: 100vh;
 }
 
 .dashboardHeader {
@@ -16,7 +18,7 @@
 .dashboardTitle {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #111827;
+  color: #463a2d;
 }
 
 .topControls {
@@ -38,10 +40,10 @@
   gap: 0.5rem;
   padding: 0.55rem 1.25rem;
   border-radius: 15px;
-  border: 1px solid #c7c7c7;
-  background-color: transparent;
+  border: 1px solid #e8dfd1;
+  background-color: #fffbf5;
   font-family: inherit;
-  color: #111827;
+  color: #5c5042;
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
@@ -49,23 +51,26 @@
 }
 
 .filterTriggerBtn:hover {
-  background-color: #f3f4f6;
+  background-color: #e6e9d5;
+  border-color: #c4ccab;
+  color: #354221;
 }
 
 .triggerActive {
-  background-color: #f3f4f6;
-  border-color: #9ca3af;
+  background-color: #e6e9d5;
+  border-color: #c4ccab;
+  color: #354221;
 }
 
 .filterPopover {
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
-  background-color: #ffffff;
+  background-color: #fffbf5;
   border-radius: 1rem;
   box-shadow:
-    0 10px 40px -10px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(0, 0, 0, 0.05);
+    0 10px 40px -10px rgba(92, 80, 66, 0.18),
+    0 0 0 1px rgba(232, 223, 209, 0.5);
   padding: 1.5rem;
   width: 380px;
   z-index: 50;
@@ -82,19 +87,19 @@
 .popoverHeader h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #111827;
+  color: #463a2d;
   margin-bottom: 0.2rem;
 }
 
 .popoverHeader p {
   font-size: 0.85rem;
-  color: #6b7280;
+  color: #877a6a;
 }
 
 .selectedCount {
   font-size: 0.85rem;
-  font-weight: 500;
-  color: #2563eb;
+  font-weight: 600;
+  color: #c96e12;
 }
 
 .chipsContainer {
@@ -109,9 +114,9 @@
   gap: 0.4rem;
   padding: 0.4rem 0.9rem;
   border-radius: 13px;
-  border: 1px solid #d1d5db;
-  background-color: #ffffff;
-  color: #4b5563;
+  border: 1px solid #e8dfd1;
+  background-color: #fffbf5;
+  color: #5c5042;
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: 500;
@@ -120,14 +125,15 @@
 }
 
 .chip:hover {
-  background-color: #f9fafb;
-  border-color: #9ca3af;
+  background-color: #e6e9d5;
+  border-color: #c4ccab;
+  color: #354221;
 }
 
 .chipSelected {
-  background-color: #f3f4f6;
-  border-color: #111827;
-  color: #111827;
+  background-color: #fcebba;
+  border-color: #e8d08b;
+  color: #59450f;
   font-weight: 600;
 }
 
@@ -147,37 +153,6 @@
   }
 }
 
-.sortSelect {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: 1px solid #c7c7c7;
-  border-radius: 0.85rem;
-  background-color: #f9fafb;
-  font-family: inherit;
-  color: #111827;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.2s ease;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23111827' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 14px;
-}
-
-.sortSelect:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.dashboardSort {
-  border-radius: 999px !important;
-  padding: 0.55rem 2.5rem 0.55rem 1rem !important;
-  font-size: 0.85rem;
-  min-width: 160px;
-  width: auto;
-}
-
 .dashboardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -189,7 +164,7 @@
   align-items: center;
   justify-content: center;
   height: 300px;
-  color: #9ca3af;
+  color: #877a6a;
   font-size: 0.9rem;
 }
 
@@ -197,11 +172,11 @@
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
-  background-color: #ffffff;
+  background-color: #fffbf5;
   border-radius: 1rem;
   box-shadow:
-    0 10px 40px -10px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(0, 0, 0, 0.05);
+    0 10px 40px -10px rgba(92, 80, 66, 0.18),
+    0 0 0 1px rgba(232, 223, 209, 0.5);
   padding: 0.5rem;
   min-width: 180px;
   z-index: 50;
@@ -221,21 +196,22 @@
   background-color: transparent;
   font-family: inherit;
   font-size: 0.875rem;
-  color: #4b5563;
+  color: #5c5042;
   cursor: pointer;
   text-align: left;
   transition: all 0.2s ease;
 }
 
 .sortOption:hover {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: #e6e9d5;
+  color: #354221;
 }
 
 .sortOptionActive {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: #fcebba;
+  color: #59450f;
   font-weight: 600;
+  border: 1px solid #e8d08b;
 }
 
 .sortCheckmark {
@@ -263,9 +239,5 @@
 
   .filterPopover {
     width: calc(100vw - 2.5rem);
-  }
-
-  .dashboardSort {
-    width: auto;
   }
 }

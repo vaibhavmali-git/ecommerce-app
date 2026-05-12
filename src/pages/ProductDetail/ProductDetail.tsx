@@ -38,7 +38,6 @@ export default function ProductDetail() {
         <h1 className={styles.dashboardTitle}>Product Details</h1>
       </div>
 
-      {/* Inline styles moved to the CSS module! */}
       <button
         onClick={() => navigate(-1)}
         className={styles.backLink}

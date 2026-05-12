@@ -1,6 +1,6 @@
 .header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #b4b4b4; 
+  background-color: #FFFBF5; 
+  border-bottom: 1px solid #E8DFD1; 
   position: sticky;
   top: 0;
   z-index: 50;
@@ -21,12 +21,12 @@
   align-items: center;
   gap: 0.3rem;
   text-decoration: none;
-  color: #111827;
+  color: #463A2D; 
 }
 
 .placeholderLogo {
-  background: #111827;
-  color: white;
+  background: #463A2D; 
+  color: #FFFBF5; 
   width: 28px;
   height: 28px;
   border-radius: 8px;
@@ -52,7 +52,7 @@
 
 .cartIconLink {
   position: relative;
-  color: #4b5563;
+  color: #877A6A; 
   transition: color 0.2s ease;
   display: flex;
   align-items: center;
@@ -60,17 +60,18 @@
 }
 
 .cartIconLink:hover {
-  color: #111827;
+  color: #C96E12; 
 }
 
 .cartBadge {
   position: absolute;
   top: -2px;
   right: -2px;
-  color: white;
+  background-color: #C96E12; 
+  color: #FFFBF5; 
   font-size: 0.7rem;
   font-weight: bold;
   padding: 0.1rem 0.4rem;
   border-radius: 1rem;
-  border: 2px solid #ffffff; 
+  border: 2px solid #FFFBF5;
 }

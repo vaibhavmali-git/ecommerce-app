@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Pagination from "../../components/Pagination/Pagination";
 import { useProductGrid } from "../../hooks/useProductGrid";
-import { Check, Funnel, CaretDown } from "@phosphor-icons/react"; // Added CaretDown
+import { Check, Funnel, CaretDown } from "@phosphor-icons/react";
 import styles from "./Home.module.css"; 
 
 export default function Home() {
@@ -21,7 +21,6 @@ export default function Home() {
     clearCategories,
   } = useProductGrid();
 
-  // ── States & Refs for Popovers ──
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isSortOpen, setIsSortOpen] = useState(false);
   
@@ -30,7 +29,6 @@ export default function Home() {
 
   const allSelected = selectedCategories.length === 0;
 
-  // ── Click Outside Logic (Handles both popovers safely) ──
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
@@ -44,7 +42,6 @@ export default function Home() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Helper to map sort values to readable text
   const getSortLabel = (val: string) => {
     switch (val) {
       case "price-asc": return "Low to High";
@@ -53,7 +50,6 @@ export default function Home() {
     }
   };
 
-  // Helper to mock the event for your existing hook
   const onSortSelect = (value: string) => {
     handleSortChange({ target: { value } } as unknown as React.ChangeEvent<HTMLSelectElement>);
     setIsSortOpen(false); // Close popover after selecting
@@ -65,16 +61,14 @@ export default function Home() {
         <h1 className={styles.dashboardTitle}>Products</h1>
       </div>
 
-      {/* ── Top Controls (Filter & Sort) ── */}
       <div className={styles.topControls}>
         
-        {/* ── 1. Filter Popover Wrapper ── */}
         <div className={styles.filterWrapper} ref={popoverRef}>
           <button 
             className={`${styles.filterTriggerBtn} ${isFilterOpen ? styles.triggerActive : ""}`}
             onClick={() => {
               setIsFilterOpen(!isFilterOpen);
-              setIsSortOpen(false); // Close sort if open
+              setIsSortOpen(false);
             }}
           >
             <Funnel size={18} weight={isFilterOpen ? "fill" : "regular"} />
@@ -120,13 +114,12 @@ export default function Home() {
           )}
         </div>
 
-        {/* ── 2. Custom Sort Popover Wrapper ── */}
         <div className={styles.filterWrapper} ref={sortRef}>
           <button
             className={`${styles.filterTriggerBtn} ${isSortOpen ? styles.triggerActive : ""}`}
             onClick={() => {
               setIsSortOpen(!isSortOpen);
-              setIsFilterOpen(false); // Close filter if open
+              setIsFilterOpen(false);
             }}
           >
             Sort: {getSortLabel(sortOrder)}
@@ -160,7 +153,6 @@ export default function Home() {
 
       </div>
 
-      {/* ── Products Grid ── */}
       {error && <div style={{ color: "red", marginBottom: "1rem" }}>{error}</div>}
 
       {loading ? (
