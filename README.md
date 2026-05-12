@@ -2,8 +2,7 @@
 
 A responsive e-commerce web application where one can browse products, filter by category, sort by price, view product details, and manage a shopping cart.
 
-**GitHub Repository:** https://github.com/vaibhavmali-git/ecommerce-app
-**Live:** https://vaibhav-ecommerce.vercel.app
+**[Live Demo](https://vaibhav-ecommerce.vercel.app)** | **[Source Code](https://github.com/vaibhavmali-git/ecommerce-app)**
 
 ## How to Set Up and Run the Application
 
