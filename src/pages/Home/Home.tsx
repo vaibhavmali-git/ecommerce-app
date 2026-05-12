@@ -4,6 +4,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import { useProductGrid } from "../../hooks/useProductGrid";
 import { Check, Funnel, CaretDown } from "@phosphor-icons/react";
 import styles from "./Home.module.css"; 
+import ProductCardSkeleton from "../../components/Loading/ProductCardSkeleton/ProductCardSkeleton";
 
 export default function Home() {
   const {
@@ -156,7 +157,9 @@ export default function Home() {
       {error && <div style={{ color: "red", marginBottom: "1rem" }}>{error}</div>}
 
       {loading ? (
-        <div className={styles.dashboardState}>Loading products…</div>
+         <div className={styles.dashboardGrid}>
+    <ProductCardSkeleton count={12} />
+  </div>
       ) : paginatedProducts.length === 0 ? (
         <div className={styles.dashboardState}>No products found.</div>
       ) : (

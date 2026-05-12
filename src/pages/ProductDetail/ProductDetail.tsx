@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useCart } from '../../context/CartContext';
 import { useProductDetail } from '../../hooks/useProductDetail';
 import styles from './ProductDetail.module.css';
+import ProductDetailSkeleton from '../../components/Loading/ProductDetailSkeleton/ProductDetailSkeleton';
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
@@ -22,7 +23,12 @@ export default function ProductDetail() {
   };
 
   if (loading) {
-    return <main style={{ padding: '2rem', textAlign: 'center' }}>Loading product details...</main>;
+    return  <main className={styles.productDetailContainer}>
+      <div className={styles.dashboardHeader}>
+        <h1 className={styles.dashboardTitle}>Product Details</h1>
+      </div>
+      <ProductDetailSkeleton />
+    </main>
   }
 
   if (error || !product) {
