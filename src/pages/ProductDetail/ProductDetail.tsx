@@ -60,7 +60,7 @@ export default function ProductDetail() {
             className={styles.addToCartBtn}
             onClick={handleAddToCart}
             whileTap={{ scale: 0.95 }}
-            animate={{ backgroundColor: isAdded ? '#10b981' : '#111827' }}
+           animate={{ backgroundColor: isAdded ? '#7FA36B' : '#463A2D' }}
             transition={{ duration: 0.01 }}
           >
             {isAdded ? '✓ Added to Cart' : 'Add to Cart'}

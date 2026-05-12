@@ -24,7 +24,7 @@ export default function Navbar() {
             {totalItems > 0 && (
               <motion.span
                 key={totalItems}
-                initial={{ scale: 1.5, backgroundColor: '#10b981' }} 
+                initial={{ scale: 1.5, backgroundColor: '#7FA36B' }} 
                 animate={{ scale: 1, backgroundColor: '#111827' }}  
                 transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                 className={styles.cartBadge}
