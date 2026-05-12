@@ -231,13 +231,49 @@
     align-items: flex-start;
   }
 
+  .dashboardTitle {
+    font-size: 1.35rem;
+  }
+
   .topControls {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
   }
 
+  .filterTriggerBtn {
+    font-size: 0.8rem;
+    padding: 0.45rem 1rem;
+  }
+
   .filterPopover {
     width: calc(100vw - 2.5rem);
+    padding: 1.25rem;
+  }
+
+  .popoverHeader h3 {
+    font-size: 1rem;
+  }
+
+  .popoverHeader p {
+    font-size: 0.8rem;
+  }
+
+  .selectedCount {
+    font-size: 0.8rem;
+  }
+
+  .chip {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .dashboardState {
+    font-size: 0.85rem;
+  }
+
+  .sortOption {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.65rem;
   }
 }

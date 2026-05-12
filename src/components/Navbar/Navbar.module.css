@@ -75,3 +75,9 @@
   border-radius: 1rem;
   border: 2px solid #FFFBF5;
 }
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
