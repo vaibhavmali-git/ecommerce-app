@@ -33,9 +33,15 @@ This project uses Playwright for end-to-end testing to ensure the core user flow
 * Due to the limitations of the external API regarding complex server-side sorting, the application handles sorting and pagination on the client side. The app fetches the items and sorts them in the browser memory. This works perfectly for catalogues with a few hundred items but would require a dedicated backend update if the store grew to thousands of items.
 * The checkout process is only visually represented. Clicking the checkout button will trigger an alert message, as there is no real payment gateway or order processing backend attached to this project.
 
+### Known Asset Performance
+The application consumes the Platzi Fake Store API for product data. Please note that the image assets provided by this public API are hosted on shared third-party servers. 
+
+As a result, you may notice a slight delay in image rendering during the initial load or when switching categories. This is a limitation of the external media hosting and not a reflection of the application's internal state management or routing logic.
+
 ## Additional Features Implemented
 
 * **Custom User Interface:** The application interface was built from scratch using CSS Modules. It avoids heavy third-party component libraries to maintain a lightweight, clean, and customized design.
 * **URL State Management:** Category filters and sorting preferences are automatically synced with the browser URL. This allows users to bookmark or share a specific filtered view, and the exact same layout will load when the link is opened.
 * **Persistent Shopping Cart:** The shopping cart uses React Context paired with browser local storage. If a user accidentally refreshes the page or closes the tab, their selected items remain safely in the cart.
 * **Micro-Interactions:** The application uses Framer Motion to provide fluid transitions when navigating between pages and smooth visual feedback when items are added to or removed from the cart.
+
