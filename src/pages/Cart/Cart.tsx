@@ -1,10 +1,55 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../../context/CartContext';
+import { CheckCircle } from '@phosphor-icons/react';
 import styles from './Cart.module.css';
 
 export default function Cart() {
-  const { cartItems, removeFromCart, totalPrice, totalItems } = useCart();
+  const { cartItems, removeFromCart, clearCart, totalPrice, totalItems } = useCart();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const navigate = useNavigate(); 
+
+  const handleCheckout = () => {
+    setIsSuccess(true);
+    clearCart();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (isSuccess) {
+    return (
+      <motion.main
+        className={`${styles.cartPage} ${styles.empty}`}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+      >
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
+        >
+          <CheckCircle 
+            size={72} 
+            weight="fill" 
+            color="#7FA36B" 
+            style={{ marginBottom: '1.5rem' }} 
+          />
+        </motion.div>
+
+        <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Order Confirmed.</h2>
+        <p style={{ color: '#666', marginBottom: '2rem' }}>
+          Thank you for your purchase. Your ledger has been updated.
+        </p>
+        <Link 
+          to="/" 
+          className={styles.continueShoppingBtn}
+          onClick={() => setIsSuccess(false)}
+        >
+          &larr; Return to catalogue
+        </Link>
+      </motion.main>
+    );
+  }
 
   if (cartItems.length === 0) {
     return (
@@ -24,6 +69,13 @@ export default function Cart() {
 
   return (
     <main className={styles.cartPage}>
+      <button
+        onClick={() => navigate(-1)}
+        className={styles.backLink}
+      >
+        &larr; Back to products
+      </button>
+
       <h2>Shopping Cart ({totalItems} items)</h2>
 
       <div className={styles.cartLayout}>
@@ -77,7 +129,7 @@ export default function Cart() {
             <span>Total</span>
             <span>${totalPrice}</span>
           </div>
-          <button className={styles.checkoutBtn} onClick={() => alert('Checkout!')}>
+          <button className={styles.checkoutBtn} onClick={handleCheckout}>
             Proceed to Checkout
           </button>
         </div>

@@ -185,3 +185,21 @@
 .checkoutBtn:hover {
   background-color: #5C5042; 
 }
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #877A6A; 
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-style: italic;
+}
+
+.backLink:hover {
+  color: #C96E12; 
+}
