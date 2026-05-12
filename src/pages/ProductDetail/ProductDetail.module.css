@@ -1,6 +1,6 @@
 .productDetailContainer {
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1190px;
   margin: 0 auto;
 }
 
@@ -45,9 +45,17 @@
 
 @media (min-width: 768px) {
   .productDetailGrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 4fr 6fr; 
     gap: 4rem;
     align-items: start;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .productDetailGrid {
+    grid-template-columns: 450px 1fr; 
+    gap: 5rem;
   }
 }
 

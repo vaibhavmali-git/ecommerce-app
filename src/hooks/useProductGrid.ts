@@ -14,7 +14,7 @@ export function useProductGrid() {
   const selectedCategories = searchParams.getAll('category'); 
   const sortOrder = searchParams.get('sort') || 'default';
   const currentPage = parseInt(searchParams.get('page') || '1', 10);
-  const limit = 12;
+  const limit = 24;
 
   useEffect(() => {
     fetchCategories().then(setCategories).catch(console.error);
