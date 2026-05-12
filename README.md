@@ -12,8 +12,8 @@ A responsive e-commerce web application where one can browse products, filter by
 
 ### 2. Filtering & Sorting
 <p align="center">
-  <img src="./docs/filter.png" width="45%" />
-  <img src="./docs/sort.png" width="45%" />
+  <img src="./docs/filter-products.png" width="45%" />
+  <img src="./docs/sort-products.png" width="45%" />
 </p>
 
 ### 3. Pagination
@@ -22,10 +22,13 @@ A responsive e-commerce web application where one can browse products, filter by
 ### 4. Product Details
 ![Product Details](./docs/product-details.png)
 
-### 5. Shopping Cart States
+### 5. Shopping Cart
+![Order Confirmation](./docs/cart.png)
+
+### 5. Cart States
 <p align="center">
   <img src="./docs/cart-empty.png" width="45%" />
-  <img src="./docs/cart.png" width="45%" />
+  <img src="./docs/cart-confirm.png" width="45%" />
 </p>
 
 ### 6. Order Confirmation
