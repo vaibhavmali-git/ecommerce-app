@@ -1,43 +1,76 @@
 .header {
   background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1rem 0;
+  border-bottom: 1px solid #b4b4b4; 
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 72px; 
 }
 
-.logo {
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: #111827;
+}
+
+.placeholderLogo {
+  background: #111827;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
-  font-size: 1.25rem;
-  text-decoration: none;
-  color: #111827;
+  font-style: italic;
+  font-size: 1.2rem;
 }
 
-.logo h1 {
+.logoText {
   margin: 0;
-  font-size: inherit;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
 }
 
-.cartLink {
-  font-weight: 500;
-  background-color: #f3f4f6;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
+.rightSection {
+  display: flex;
+  align-items: center;
+}
 
-  text-decoration: none;
+.cartIconLink {
+  position: relative;
+  color: #4b5563;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem; 
+}
+
+.cartIconLink:hover {
   color: #111827;
-
-  transition: background-color 0.2s;
 }
 
-.cartLink:hover {
-  background-color: #e5e7eb;
+.cartBadge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.1rem 0.4rem;
+  border-radius: 1rem;
+  border: 2px solid #ffffff; 
 }

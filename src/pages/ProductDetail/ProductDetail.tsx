@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useCart } from '../context/CartContext';
-import { useProductDetail } from '../hooks/useProductDetail';
+import { useCart } from '../../context/CartContext';
+import { useProductDetail } from '../../hooks/useProductDetail';
+import styles from './ProductDetail.module.css';
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { addToCart } = useCart();
-  
+
   const { product, loading, error } = useProductDetail(id);
-  
+
   const [isAdded, setIsAdded] = useState(false);
 
   const handleAddToCart = () => {
@@ -31,32 +32,37 @@ export default function ProductDetail() {
   const cleanImage = (product.images[0] || '').replace(/^\["|"\]$/g, '');
 
   return (
-    <main className="product-detail-container">
-      <button 
-        onClick={() => navigate(-1)} 
-        className="back-link" 
-        style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+    <main className={styles.productDetailContainer}>
+
+      <div className={styles.dashboardHeader}>
+        <h1 className={styles.dashboardTitle}>Product Details</h1>
+      </div>
+
+      {/* Inline styles moved to the CSS module! */}
+      <button
+        onClick={() => navigate(-1)}
+        className={styles.backLink}
       >
         ← Back to products
       </button>
-      
-      <div className="product-detail-grid">
-        <div className="product-detail-image">
+
+      <div className={styles.productDetailGrid}>
+        <div className={styles.productDetailImage}>
           <img src={cleanImage || 'https://via.placeholder.com/600'} alt={product.title} />
         </div>
-        
-        <div className="product-detail-info">
-          <p className="product-category">{product.category.name}</p>
+
+        <div className={styles.productDetailInfo}>
+          <p className={styles.productCategory}>{product.category.name}</p>
           <h2>{product.title}</h2>
-          <p className="product-price">${product.price}</p>
-          <p className="product-description">{product.description}</p>
-          
-          <motion.button 
-            className="add-to-cart-btn"
+          <p className={styles.productPrice}>${product.price}</p>
+          <p className={styles.productDescription}>{product.description}</p>
+
+          <motion.button
+            className={styles.addToCartBtn}
             onClick={handleAddToCart}
             whileTap={{ scale: 0.95 }}
             animate={{ backgroundColor: isAdded ? '#10b981' : '#111827' }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.01 }}
           >
             {isAdded ? '✓ Added to Cart' : 'Add to Cart'}
           </motion.button>

@@ -1,0 +1,271 @@
+.dashboardPage {
+  padding: 2rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dashboardTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.topControls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  z-index: 40;
+}
+
+.filterWrapper {
+  position: relative;
+}
+
+.filterTriggerBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid #c7c7c7;
+  background-color: transparent;
+  font-family: inherit;
+  color: #111827;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterTriggerBtn:hover {
+  background-color: #f3f4f6;
+}
+
+.triggerActive {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.filterPopover {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  width: 380px;
+  z-index: 50;
+  animation: popIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.popoverHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.popoverHeader h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.2rem;
+}
+
+.popoverHeader p {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.selectedCount {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+.chipsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.chipSelected {
+  background-color: #f3f4f6;
+  border-color: #111827;
+  color: #111827;
+  font-weight: 600;
+}
+
+.checkIcon {
+  color: inherit;
+  animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sortSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #c7c7c7;
+  border-radius: 0.85rem;
+  background-color: #f9fafb;
+  font-family: inherit;
+  color: #111827;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23111827' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 14px;
+}
+
+.sortSelect:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.dashboardSort {
+  border-radius: 999px !important;
+  padding: 0.55rem 2.5rem 0.55rem 1rem !important;
+  font-size: 0.85rem;
+  min-width: 160px;
+  width: auto;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+}
+
+.dashboardState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.sortPopover {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  min-width: 180px;
+  z-index: 50;
+  animation: popIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sortOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #4b5563;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.sortOption:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.sortOptionActive {
+  background-color: #f3f4f6;
+  color: #111827;
+  font-weight: 600;
+}
+
+.sortCheckmark {
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .dashboardPage {
+    padding: 1.25rem;
+  }
+
+  .dashboardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topControls {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .filterPopover {
+    width: calc(100vw - 2.5rem);
+  }
+
+  .dashboardSort {
+    width: auto;
+  }
+}

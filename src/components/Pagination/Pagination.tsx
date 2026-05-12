@@ -1,3 +1,6 @@
+import React from 'react';
+import styles from './Pagination.module.css';
+
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
@@ -18,27 +21,26 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
     }
 
-
     return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
   };
 
   const pages = getPageNumbers();
 
   return (
-    <nav className="pagination-container" aria-label="Pagination">
+    <nav className={styles.paginationContainer} aria-label="Pagination">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="page-nav-btn"
+        className={styles.pageNavBtn}
       >
         Prev
       </button>
 
-      <div className="page-numbers">
+      <div className={styles.pageNumbers}>
         {pages.map((page, index) => {
           if (page === '...') {
             return (
-              <span key={`dots-${index}`} className="page-dots">
+              <span key={`dots-${index}`} className={styles.pageDots}>
                 &#8230;
               </span>
             );
@@ -48,7 +50,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
             <button
               key={page}
               onClick={() => onPageChange(page as number)}
-              className={`page-number-btn ${currentPage === page ? 'active' : ''}`}
+              className={`${styles.pageNumberBtn} ${currentPage === page ? styles.active : ''}`}
               aria-current={currentPage === page ? 'page' : undefined}
             >
               {page}
@@ -60,7 +62,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="page-nav-btn"
+        className={styles.pageNavBtn}
       >
         Next
       </button>

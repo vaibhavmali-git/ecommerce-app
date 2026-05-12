@@ -83,6 +83,13 @@ export function useProductGrid() {
     window.scrollTo({ top: 0, behavior: 'smooth' }); 
   };
 
+  const clearCategories = () => {
+  const newParams = new URLSearchParams(searchParams);
+  newParams.delete('category');
+  newParams.set('page', '1');
+  setSearchParams(newParams);
+};
+
   return {
     paginatedProducts,
     categories,
@@ -94,6 +101,7 @@ export function useProductGrid() {
     totalPages,
     handleCategoryToggle,
     handleSortChange,
-    handlePageChange
+    handlePageChange,
+    clearCategories
   };
 }
